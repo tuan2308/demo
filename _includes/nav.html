@@ -1,0 +1,65 @@
+<div role="main" class="container">
+<nav class="mb-3 card navbar navbar-expand-lg navbar-light {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
+<div class="container">
+  {%- if site.title-img -%}
+    <a class="navbar-brand navbar-brand-logo" href="{{ '' | absolute_url }}"><img alt="{{ site.title }} Logo" width="32" height="32" class="align-bottom" src="{{ site.title-img | relative_url}}"/> {{ site.title }}</a>
+  {%- elsif site.title -%}
+    <a class="navbar-brand" href="{{ '' | absolute_url }}">{{ site.title }}</a>
+  {%- endif -%}
+
+
+  <button class="btn navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav">
+      {%- for link in site.navbar-links -%}
+        {%- if link[1].first %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ link[0] }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {%- for childlink in link[1] -%}
+                {%- for linkparts in childlink %}
+                  <a class="dropdown-item" href="{{ linkparts[1] | relative_url }}">{{ linkparts[0] }}</a>
+                {%- endfor -%}
+              {%- endfor %}
+            </div>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ link[1] | relative_url }}">{{ link[0] }}</a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+
+    </ul>
+    <form action="/tim-kiem" method="get" class="ms-auto">
+  
+      <div class="input-group"><input type="text" id="search-box" name="query" class="form-control" placeholder="Nhập từ khoá tìm kiếm"><button type="submit" value="Tìm kiếm" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
+      
+    </form>
+  </div>
+
+  {% if site.navbar-extra %}
+    {% for file in site.navbar-extra %}
+      {% include {{ file }} %}
+    {% endfor %}
+  {% endif %}
+
+  {% if site.avatar and page.show-avatar != false %}
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="{{ '' | absolute_url }}">
+          <img alt="Navigation bar avatar" class="avatar-img" src="{{ site.avatar | relative_url }}" />
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+
+
+
+</div>
+</nav>
+</div>

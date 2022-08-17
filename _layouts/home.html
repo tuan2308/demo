@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+{{ content }}
+
+
+{% assign posts = paginator.posts | default: site.posts %}
+
+<div class="card post-home my-3">
+<div class="card-body row row-cols-1 row-cols-md-2">
+
+  {% for post in posts %}
+ 
+ 
+
+    {%- capture thumbnail -%}
+      {% if post.thumbnail-img %}
+        {{ post.thumbnail-img }}
+      {% elsif post.cover-img %}
+        {% if post.cover-img.first %}
+          {{ post.cover-img[0].first.first }}
+        {% else %}
+          {{ post.cover-img }}
+        {% endif %}
+      {% else %}
+      {% endif %}
+    {% endcapture %}
+    {% assign thumbnail=thumbnail | strip %}
+
+    {% if site.feed_show_excerpt == false %}
+    {% if thumbnail != "" %}
+    <div class="post-image post-image-normal">
+      <a href="{{ post.url | absolute_url }}" aria-label="Thumbnail">
+        <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail">
+      </a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+<div class="d-flex mb-3">
+  
+{% if thumbnail != "" %}
+      <div class="post-thumb mr-3">
+        <a href="{{ post.url | absolute_url }}">
+  <img width="100" height="100" src="{{ thumbnail | absolute_url }}" alt="{{ post.title }}"></a>
+
+
+</div>
+  {% endif %}
+ 
+    
+ <h2><a href="{{ post.url | absolute_url }}" class="text-decoration-none">{{ post.title }}</a></h2>
+
+
+
+</div>
+
+
+  {% endfor %}
+
+</div>
+</div>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pagination main-pager">
+  {% if paginator.previous_page %}
+  <li class="page-item previous">
+    <a class="page-link" href="{{ paginator.previous_page_path | absolute_url }}">&larr; Trang trước</a>
+  </li>
+  {% endif %}
+  {% if paginator.next_page %}
+  <li class="page-item next">
+    <a class="page-link" href="{{ paginator.next_page_path | absolute_url }}">Trang sau &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
+
+<div class="card my-3">
+  <div class="card-body">
+
+    <h1 style=" display: inline-block; font-size: 1rem; ">Web Tool</h1> là một website tổng hợp các công cụ, tiện ích online hoàn toàn miễn phí.
+    Với mong muốn giúp đỡ mọi người thực hiện những điều mình muốn một cách đơn giản nhất, website cung cấp các ứng dụng phần mềm trực tuyến trên nhiều lĩnh vực khác nhau,
+    hoạt động tốt trên mọi thiết bị có kết nối Internet.
+
+<br/>
+</div></div>

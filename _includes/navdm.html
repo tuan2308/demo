@@ -1,0 +1,92 @@
+
+<style>
+
+div#tad-danhmuc {
+    padding: 1rem 0 1rem 1rem !important;
+    background: #fff;
+    flex-wrap: nowrap!important;
+    border: 1px solid #dee2e6!important;
+    overflow: auto;
+    border-radius: 5px;
+    margin: 0;
+}
+
+div#tad-danhmuc>div {
+    -ms-flex: none;
+    flex: none;
+    padding-left: 0;
+    padding-right: 15px;
+    width: auto;
+}
+
+div#tad-danhmuc a {
+    text-decoration: none;
+}
+@media only screen and (min-width:768px){div#tad-danhmuc::-webkit-scrollbar { height: 5px;margin-top:-10px; } div#tad-danhmuc::-webkit-scrollbar-track { background:#eee; } div#tad-danhmuc::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; } div#tad-danhmuc::-webkit-scrollbar-thumb:hover { background: #aaa; }}
+</style>
+<div class="container"><div class='danhmuc row' id='tad-danhmuc'></div></div>
+
+<script type='text/javascript'>
+//<![CDATA[
+
+var danhmuc = [
+{
+icon: "far fa-image",
+name: "Tạo ảnh đẹp",
+url: "https://www.taoanhdep.com/",
+target:"_blank"
+},
+{
+icon: "fas fa-graduation-cap",
+name: "Tính điểm tốt nghiệp THPT",
+url: "/tinh-diem-tot-nghiep-thpt/",
+},
+{
+icon: "fas fa-pencil-alt",
+name: "Viết chữ in đậm, in nghiêng",
+url: "/tao-chu-in-dam-in-nghieng/",
+},
+{
+icon: "fab fa-facebook",
+name: "Lấy id facebook",
+url: "/lay-id-facebook/",
+},
+{
+icon: "fas fa-mobile-alt",
+name: "Hình nền tai gấu iphone",
+url: "https://www.taoanhdep.com/2020/05/tao-hinh-nen-an-tai-tho-iphone-x.html",
+target:"_blank"
+},
+{
+icon: "fas fa-check-circle",
+name: "Avatar dấu tích xanh",
+url: "https://www.taoanhdep.com/2020/04/tao-anh-avatar-facebook-dau-tich-xanh.html",
+target:"_blank"
+}
+];
+
+var taddanhmuc = document.getElementById("tad-danhmuc");
+danhmuc.forEach(function(danhmuc) {
+
+ var dm = document.createElement('div');;
+
+
+if(danhmuc.target){
+
+dm.innerHTML = "<div class='border px-3 py-2 rounded'><a href='"+ danhmuc.url +"' target='"+ danhmuc.target +"'><h3><i class='"+danhmuc.icon+"'></i> "+danhmuc.name+"</h3></a></div>";
+}
+else{
+ dm.innerHTML = "<div class='border px-3 py-2 rounded'><a href='"+ danhmuc.url +"'><h3><i class='"+danhmuc.icon+"'></i> "+danhmuc.name+"</h3></a></div>";
+}
+
+
+
+ 
+
+taddanhmuc.appendChild(dm);
+
+});
+
+//]]>
+</script>
+

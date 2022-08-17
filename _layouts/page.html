@@ -1,0 +1,43 @@
+---
+layout: base
+---
+<div class="container" role="main">
+  <div class="card my-3">
+
+    <div class="card-header">
+    {% include header.html type="page" %}
+    </div>
+
+    <div class="card-body">
+
+      
+      {% if page.before-content %}
+        <div class="before-content">
+          {% for file in page.before-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {{ content }}
+
+      {% if page.after-content %}
+        <div class="after-content">
+          {% for file in page.after-content %}
+            {% include {{ file }} %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+
+
+    </div>
+
+  </div>
+
+  {% include ads1.html %}
+  
+  {% include comments.html %}
+
+</div>
+

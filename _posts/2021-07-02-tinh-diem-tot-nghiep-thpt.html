@@ -1,0 +1,270 @@
+---
+layout: page
+title: Công cụ tính điểm tốt nghiệp THPT 2022 chính xác nhất
+tags: [Học tập]
+thumbnail-img: /toolsrc/thpt/tinh-diem-tot-nghiep-thpt-2021.jpg
+---
+<meta http-equiv="refresh" content="0;url=https://www.taoanhdep.com/2022/03/tinh-diem-tot-nghiep-thpt.html" />
+<script>
+    document.location = "https://www.taoanhdep.com/2022/03/tinh-diem-tot-nghiep-thpt.html";
+</script>
+Kỳ thi tốt nghiệp THPT 2022 vừa qua, nhiều thí sinh còn băn khoăn về cách tính điểm tốt nghiệp ra sao? Để giúp thí sinh thuận tiện hơn trong việc tính điểm, dưới đây là công cụ tính điểm ngược và tính xuôi nhanh và chính xác nhất:
+<br/>
+<ul class="my-3 nav nav-tabs">
+<li class="nav-item">
+<a class="nav-link active" id="tx-tab" data-toggle="tab" href="#tx" role="tab" aria-controls="tx" aria-selected="true">Tính xuôi</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="tn-tab" data-toggle="tab" href="#tn" role="tab" aria-controls="tn" aria-selected="false">Tính ngược</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">GDTX</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" id="gdtx-tx-tab" data-toggle="tab" href="#gdtx-tx" role="tab" aria-controls="gdtx-tx" aria-selected="true" aria-expanded="true">Tính xuôi</a>
+<a class="dropdown-item" id="gdtx-tn-tab" data-toggle="tab" href="#gdtx-tn" role="tab" aria-controls="gdtx-tn" aria-selected="true" aria-expanded="true">Tính ngược</a>
+</div>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" id="hd-tab" data-toggle="tab" href="#hd" role="tab" aria-controls="hd" aria-selected="false">Hướng dẫn</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" id="dk-tab" data-toggle="tab" href="#dk" role="tab" aria-controls="dk" aria-selected="true">Điều kiện</a>
+</li>
+
+
+
+</ul>
+<div class="content">
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active show" id="tx" role="tabpanel" aria-labelledby="tx-tab">
+        <form class="form-horizontal" id="wt-tinhxuoi">
+        <label>Điểm Tổ Hợp Môn</label><div class="mb-3 row">
+        
+        <div class="col-lg-4"><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" required="" id="diemtohop1" type="number" class="form-control" name="diemtohop1" placeholder="Môn 1 : Lý hoặc Sử">
+        </div>
+        <div class="col-lg-4"><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" required="" id="diemtohop2" type="number" class="form-control" name="diemtohop2" placeholder="Môn 2 : Hoá hoặc Địa">
+        </div>
+        <div class="col-lg-4"><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" required="" id="diemtohop3" type="number" class="form-control" name="diemtohop3" placeholder="Môn 3 : Sinh hoặc GDCD">
+        </div>
+        </div><div class="mb-3 row">
+        <div class="col-lg-4"> 
+        <label>Điểm Toán</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemtoan" type="number" class="form-control" name="diemtoan" required="" placeholder="Điểm môn Toán">
+        </div>
+        <div class="col-lg-4">  <label>Điểm Văn</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" required="" id="diemvan" type="number" class="form-control" name="diemvan" placeholder="Điểm môn Văn"></div>
+        
+        <div class="col-lg-4">  <label>Điểm Anh</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" required="" id="diemanh" type="number" class="form-control" name="diemanh" placeholder="Điểm môn Anh"></div>
+        
+        </div><div class="mb-3 row">
+        
+        <div class="col-lg-6"><label>Điểm Khuyến Khích (nếu có)</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>4)this.value=4" id="diemkk" type="number" class="form-control" name="diemkk" placeholder="Điểm Khuyến Khích (tối đa 4 điểm)">
+        </div>
+        <div class="col-lg-6">  <label>Điểm Ưu Tiên (nếu có)</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>2.75)this.value=2.75" id="diemut" type="number" class="form-control" name="diemut" placeholder="Điểm ưu tiên"></div>
+        
+        </div><div class="mb-3">  <label>Điểm trung bình cả năm</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" required="" id="diemtb" type="number" class="form-control" name="diemtb" placeholder="Điểm trung bình cả năm">
+        </div> <button type="submit" class="btn btn-primary btn-block">Tính Xem</button>
+        </form>
+
+        </div>
+        <div class="tab-pane fade" id="tn" role="tabpanel" aria-labelledby="tn-tab">
+            <form id="wt-tinhnguoc">
+                <label>Điểm trung bình cả năm</label><div class="mb-3">  <input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemtbn" type="number" class="form-control" name="diemtbn" required="" placeholder="Điểm trung bình cả năm"></div>
+                
+                <div class="mb-3 row"><div class="col-lg-6">  <label>Điểm khuyến khích (Nếu có)</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>4)this.value=4" id="diemkkn" type="number" class="form-control" name="diemkkn" placeholder="Điểm khuyến khích"></div><div class="col-lg-6">  <label>Điểm ưu tiên (Nếu có)</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>2.75)this.value=2.75" id="diemutn" type="number" class="form-control" name="diemutn" placeholder="Điểm ưu tiên"></div></div>
+        
+                <button type="submit" class="btn btn-primary btn-block">Tính Xem</button>
+                </form>
+        </div>
+        <div class="tab-pane fade" id="gdtx-tx" role="tabpanel" aria-labelledby="gdtx-tx-tab">
+            <form id="wt-tinhxuoi-gdtx">
+                <div class="row">
+                <div class="col-lg-6">
+                <div class="mb-3">  <label>Điểm bài thi 1</label>
+                <input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemtoangdtx" type="number" class="form-control" name="diemtoangdtx" required="" placeholder="Điểm bài thi 1"></div>
+                <div class="mb-3">  <label>Điểm bài thi 2</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemvangdtx" type="number" class="form-control" name="diemvangdtx" required="" placeholder="Điểm bài thi 2"></div>
+                <div class="mb-3">  <label>Điểm bài thi 3</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemanhgdtx" type="number" class="form-control" name="diemanhgdtx" required="" placeholder="Điểm bài thi 3"></div>
+                </div>
+                <div class="col-lg-6">
+                <div class="mb-3">  <label>Điểm trung bình cả năm</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemtbgdtx" type="number" class="form-control" name="diemtbgdtx" required="" placeholder="Điểm trung bình cả năm"></div>
+                <div class="mb-3">  <label>Điểm khuyến khích (Tuỳ chọn)</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>4)this.value=4" id="diemkkgdtx" type="number" class="form-control" name="diemkkgdtx" placeholder="Điểm khuyến khích">
+                </div>
+                <div class="mb-3">  <label>Điểm ưu tiên (Tuỳ chọn)</label><input step="0.01" min="0" max="10" onblur="if(this.value<0)this.value=0;if(this.value>2.75)this.value=2.75" id="diemutgdtx" type="number" class="form-control" name="diemutgdtx" placeholder="Điểm ưu tiên"></div>
+                
+                </div>
+                </div> <button type="submit" class="btn btn-primary btn-block">Tính Xem</button>
+                </form>
+        </div>
+        <div class="tab-pane fade" id="gdtx-tn" role="tabpanel" aria-labelledby="gdtx-tn-tab">
+            <form id="wt-tinhnguoc-gdtx">
+                <label>Điểm trung bình cả năm</label>
+                <div class="mb-3"> <input step="0.01" min="0" max="10"
+                        onblur="if(this.value<0)this.value=0;if(this.value>10)this.value=10" id="diemtbngdtx" type="number"
+                        class="form-control" name="diemtbngdtx" required="" placeholder="Điểm trung bình cả năm"></div>
+            
+                <div class="mb-3 row">
+                    <div class="col-lg-6"> <label>Điểm khuyến khích (Nếu có)</label><input step="0.01" min="0" max="10"
+                            onblur="if(this.value<0)this.value=0;if(this.value>4)this.value=4" id="diemkkngdtx" type="number"
+                            class="form-control" name="diemkkngdtx" placeholder="Điểm khuyến khích"></div>
+                    <div class="col-lg-6"> <label>Điểm ưu tiên (Nếu có)</label><input step="0.01" min="0" max="10"
+                            onblur="if(this.value<0)this.value=0;if(this.value>2.75)this.value=2.75" id="diemutngdtx" type="number"
+                            class="form-control" name="diemutngdtx" placeholder="Điểm ưu tiên"></div>
+                </div>
+            
+                <button type="submit" class="btn btn-primary btn-block">Tính Xem</button>
+            </form>
+        </div>
+
+
+        <div class="tab-pane fade" id="hd" role="tabpanel" aria-labelledby="hd-tab">
+            <center><h3>HƯỚNG DẪN  VỀ  CÁC DIỆN  ƯU TIÊN VÀ ĐIỂM KHUYẾN KHÍCH</h3></center> 
+
+ 
+
+            <i><h5>I. DIỆN ƯU TIÊN XÉT TỐT NGHIỆP <small>Thí sinh thuộc một trong các diện:</small></h5></i>
+            <u>Diện 1:</u> Không được cộng điểm ưu tiên.<br/>
+            
+            Còn gọi là diện bình thường. (Ký hiệu: D1)<br/>
+            
+            <u>Diện 2:</u> cộng 0,25 điểm đối với thí sinh thuộc một trong những đối tượng sau:<br/>
+            
+            a) - Thương binh, bệnh binh, người được hưởng chính sách như thương binh, bệnh binh mất sức lao động dưới 81% (chỉ với GDTX); Con của thương binh, bệnh binh, người được hưởng chính sách như thương binh, bệnh binh bị suy giảm khả năng lao động dưới 81%; Anh hùng lực lượng vũ trang nhân dân, Anh hùng lao động;   (Ký hiệu: D2-TB2)
+            <br/>
+            - Con Anh hùng LLVT, con Anh hùng lao động, con Bà mẹ VN Anh hùng  (Ký hiệu: D2-CAH)
+            <br/>
+            - Người dân tộc thiểu số;  (Ký hiệu:  D2-TS2)
+            <br/>
+            - Người Kinh, người nước ngoài cư trú tại Việt Nam có hộ khẩu thường trú từ 3 năm trở lên (tính đến ngày tổ chức kỳ thi) ở xã đặc biệt khó khăn, xã biên giới, xã an toàn khu thuộc diện đầu tư của chương trình 135; ở xã đặc biệt khó khăn vùng bãi ngang ven biển và hải đảo theo quy định hiện hành của Thủ tướng Chính phủ; ở thôn đặc biệt khó khăn, xã khu vực I, II, III thuộc vùng dân tộc và miền núi theo quy định hiện hành của Ủy ban Dân tộc, học tại các trường phổ thông không nằm trên địa bàn các quận nội thành của các thành phố trực thuộc Trung ương ít nhất 2 phần 3 thời gian học cấp THPT;   (Ký hiệu:  D2-VS2)
+            <br/>
+            - Người bị nhiễm chất độc màu da cam; con của người bị nhiễm chất độc màu da cam; con của người hoạt động kháng chiến bị nhiễm chất độc hóa học; người được cơ quan có thẩm quyền công nhận bị dị dạng, dị tật, suy giảm khả năng tự lực trong sinh hoạt hoặc lao động do hậu quả của chất độc hoá học;   (Ký hiệu:    D2-CHH)
+            <br/>
+            - Con của người hoạt động cách mạng trước Tổng khởi nghĩa 19 tháng 8 năm 1945 (đối với GDTX); (Ký hiệu:  D2-CCM)
+            <br/>
+            - Có tuổi đời từ 35 tuổi trở lên, tính đến ngày thi.  (Ký hiệu:  D2-T35)
+            <br/>
+            <u>Diện 3:</u> cộng 0,5 điểm đối với thí sinh thuộc một trong những đối tượng sau:
+            <br/>
+            - Người dân tộc thiểu số, bản thân có hộ khẩu thường trú ở xã đặc biệt khó khăn, xã biên giới, xã an toàn khu thuộc diện đầu tư của chương trình 135; ở xã đặc biệt khó khăn vùng bãi ngang ven biển và hải đảo theo quy định hiện hành của Thủ tướng Chính phủ; ở thôn đặc biệt khó khăn, xã khu vực I, II, III thuộc vùng dân tộc và miền núi theo quy định hiện hành của Ủy ban Dân tộc, đang học tại các trường phổ thông dân tộc nội trú hoặc các trường phổ thông không nằm trên địa bàn các quận nội thành của các thành phố trực thuộc Trung ương;  (Ký hiệu:   D3-TS3)
+            <br/>
+            - Thương binh, bệnh binh, người hưởng chính sách như thương binh, bệnh binh bị suy giảm khả năng lao động từ 81% trở lên (đối với GDTX);  (Ký hiệu:  D3-TB3)
+            <br/>
+            - Con của liệt sĩ; con của thương binh, bệnh binh, người được hưởng chính sách như thương binh, bệnh binh bị suy giảm khả năng lao động từ 81% trở lên.  (Ký hiệu:  D3-CLS)
+            <br/>
+            *  Học sinh có nhiều tiêu chuẩn ưu tiên thì chỉ hưởng theo tiêu chuẩn cao nhất.
+            <br/>
+             
+            
+            <h5>II. ĐIỂM KHUYẾN KHÍCH:</h5>
+            1. Đạt giải cá nhân kỳ thi học sinh giỏi bộ môn văn hoá lớp 12:
+            <br/>
+            - Giải nhất, nhì, ba cấp quốc gia hoặc giải nhất cấp tỉnh:  2,0 điểm.
+            <br/>
+            - Giải khuyến khích cấp quốc gia hoặc giải nhì cấp tỉnh:  1,5 điểm.
+            <br/>
+            - Giải ba cấp tỉnh:  1,0 điểm.
+            <br/>
+            2. Đoạt giải cá nhân và đồng đội trong các kỳ thi thí nghiệm thực hành môn Vật lí, Hoá học, Sinh học; thi văn nghệ; thể dục thể thao; hội thao giáo dục quốc phòng; cuộc thi khoa học kỹ thuật; viết thư quốc tế do ngành Giáo dục phối hợp với các ngành chuyên môn từ cấp tỉnh trở lên tổ chức ở cấp THPT:
+            <br/>
+            - Đoạt giải nhất, nhì, ba quốc gia hoặc giải nhất cấp tỉnh hoặc Huy chương Vàng:   2,0 điểm.
+            <br/>
+            - Giải khuyến khích quốc gia hoặc giải nhì cấp tỉnh hoặc Huy chương Bạc:     1,5 điểm.
+            <br/>
+            - Giải ba cấp tỉnh hoặc Huy chương Đồng:   1,0 điểm.
+            <br/>
+            * Giải đồng đội chỉ tính cho giải quốc gia, mức điểm cộng thêm giống như giải cá nhân.
+            <br/>
+            * Học sinh đạt nhiều giải khác nhau thì chỉ được hưởng mức cộng điểm của giải cao nhất.
+            <br/>
+            3. Được cấp Giấy chứng nhận nghề:
+            <br/>
+            - Loại giỏi:  2,0 điểm.
+            <br/>
+            - Loại khá:  1,5 điểm.
+            <br/>
+            - Loại trung bình:  1,0 điểm.         
+            <br/>
+            4. Nếu học viên GDTX có chứng chỉ Ngoại ngữ A hoặc Tin học A trở lên (kể cả kỹ thuật viên): được cộng thêm 1,0 điểm cho mỗi loại chứng chỉ.
+            <br/>
+            * Điểm khuyến khích tối đa của các mục 1,2,3,4 trên không quá 4,0 điểm.
+            <br/>
+            * Điểm khuyến khích quy định của các mục 1,2,3,4  trên được bảo lưu trong toàn cấp học./.<br/>
+            <p style="float:right"> Theo thiquocgia.vn</p>
+            </div>
+
+            <div class="tab-pane fade" id="dk" role="tabpanel" aria-labelledby="dk-tab">
+                <center><h3>Điều kiện đỗ tốt nghiệp THPT</h3></center>
+
+                Thí sinh cần đảm bảo đủ các điều kiện dưới đây để được công nhận đỗ tốt nghiệp THPT:
+                <br/>
+                Một là, thí sinh tham gia kỳ thi THPT Quốc gia, không vi phạm kỷ luật ở hình thức hủy bài thi, điểm các môn thi thành phần của tổ hợp xét điểm không có môn nào dưới điểm 1.0 (tính theo thang điểm 10)
+                <br/>
+                Hai là, điểm trung bình xét tốt nghiệp phải đạt 5 điểm trở lên.
+                <br/>
+                Với những thí sinh không đạt 5 điểm, sẽ không được thi lại vào các đợt tiếp theo mà phải đợi đến kỳ thi THPT Quốc gia năm tới.
+                <br/>
+                Điểm liệt của mỗi bài thi (tính theo thang điểm 10) là từ 1 điểm trở xuống.
+                <br/>
+                Lưu ý để đạt điểm cao trong kỳ thi THPT Quốc gia
+                <br/>
+              <p style="float:right"> Theo thiquocgia.vn</p>
+                
+            </div>
+
+
+        </div>
+<div class="modal fade" id="tinhxuoi0" aria-hidden="true" style="display:none">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Kết quả</h4>
+<button type="button" class="btn-close" data-dismiss="modal"></button>
+</div>
+<div class="modal-body"> <span id="tinhxuoi">Bạn đã trượt tốt nghiệp do có 1 môn dưới hoặc bằng 1!</span><br> <span id="tinhxuoi2"></span>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button></div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="tinhnguoc0" role="dialog">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Kết quả</h4>
+<button type="button" class="btn-close" data-dismiss="modal"></button>
+</div>
+<div class="modal-body"><span id="tinhnguoc"></span>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button></div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="tinhxuoi0gdtx" role="dialog">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Kết quả</h4>
+<button type="button" class="btn-close" data-dismiss="modal"></button>
+</div>
+<div class="modal-body"><span id="tinhxuoigdtx"></span><br><span id="tinhxuoi2gdtx"></span>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button></div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="tinhnguoc0gdtx" role="dialog">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Kết quả</h4>
+<button type="button" class="btn-close" data-dismiss="modal"></button>
+</div>
+<div class="modal-body"><span id="tinhnguocgdtx"></span>
+</div>
+<div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button></div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="../toolsrc/thpt/js/main.js"></script>

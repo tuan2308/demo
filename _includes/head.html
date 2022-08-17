@@ -1,0 +1,230 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content='index,follow' name='Googlebot'/>
+  <meta content='index,follow,noodp' name='robots'/>
+  <meta name="google-site-verification" content="OxlSVpYOpwTAuiLemgwMS5MffpM1QIb4PlfUgHk7kn0" />
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../assets/faviconfavicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="../assets/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="../assets/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<script src="data:text/javascript;base64,dmFyIGxoID0gImxvY2FsaG9zdCI7CnZhciB3dCA9ICJ3ZWJ0b29sLnZuIjsK"></script>
+<meta name='dmca-site-verification' content='KzV5TXlPekVVdVVGTDRKdnBjbnF1dz090' />
+  {% capture title %}
+    {%- if page.share-title -%}
+      {{ page.share-title | strip_html | xml_escape }}
+    {%- elsif page.title -%}
+      {{ page.title | strip_html | xml_escape  }}
+    {%- else -%}
+      {{ site.title | strip_html | xml_escape }}
+    {%- endif -%}
+  {% endcapture %}
+
+  {% capture description %}
+    {%- if page.share-description -%}
+      {{ page.share-description | strip_html | xml_escape }}
+    {%- elsif page.subtitle -%}
+      {{ page.subtitle | strip_html | xml_escape }}
+    {%- else -%}
+      {%- assign excerpt_length = site.excerpt_length | default: 50 -%}
+      {{ page.content | strip_html | xml_escape | truncatewords: excerpt_length | strip }}
+    {%- endif -%}
+  {% endcapture %}
+
+  <title>{{ title }}</title>
+
+  {% if site.author %}
+  <meta name="author" content="{{ site.author }}">
+  {% endif %}
+
+  <meta name="description" content="{{ description }}">
+
+  {% if site.mobile-theme-col %}
+  <meta name="theme-color" content="{{ site.mobile-theme-col }}">
+  {% endif %}
+
+  {% if site.keywords %}
+  <meta name="keywords" content="{{ site.keywords }}">
+  {% endif %}
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+
+  {% include gtag.html %}
+  {% include gtm_head.html %}
+  {% include google_analytics.html %}
+
+  {% if layout.common-ext-css %}
+    {% for css in layout.common-ext-css %}
+      {% include ext-css.html css=css %}
+    {% endfor %}
+  {% endif %}
+
+  {% if layout.common-css %}
+    {% for css in layout.common-css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if site.site-css %}
+    {% for css in site.site-css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if page.ext-css %}
+    {% for css in page.ext-css %}
+      {% include ext-css.html css=css %}
+    {% endfor %}
+  {% endif %}
+  
+  {% if page.css %}
+    {% for css in page.css %}
+      <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if site.fb_app_id %}
+  <meta property="fb:app_id" content="{{ site.fb_app_id }}">
+  {% endif %}
+
+  {% if site.title %}
+  <meta property="og:site_name" content="{{ site.title }}">
+  {% endif %}
+
+  {%- capture img -%}
+    {%- if page.share-img -%}
+      {{ page.share-img }}
+    {%- elsif page.cover-img -%}
+      {%- if page.cover-img.first -%}
+        {{ page.cover-img[0].first.first }}
+      {%- else -%}
+        {{ page.cover-img }}
+      {%- endif -%}
+    {%- elsif page.thumbnail-img -%}
+      {{ page.thumbnail-img }}
+    {%- elsif site.avatar -%}
+      {{ site.avatar }}
+    {% endif %}
+  {%- endcapture -%}
+  {%- assign img=img | strip -%}
+
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+
+  {% if img != "" %}
+  <meta property="og:image" content="{{ img | absolute_url }}">
+  {% endif %}
+
+  {% if page.id %}
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="{{ site.author }}">
+  <meta property="og:article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% else %}
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url | strip_index }}">
+  <link rel="canonical" href="{{ page.url | absolute_url | strip_index }}">
+  {% endif %}
+
+  {% if img != "" and img != site.avatar %}
+  <meta name="twitter:card" content="summary_large_image">
+  {% else %}
+  <meta name="twitter:card" content="summary">
+  {% endif %}
+  <meta name="twitter:site" content="@{{ site.social-network-links.twitter }}">
+  <meta name="twitter:creator" content="@{{ site.social-network-links.twitter }}">
+
+  <meta property="twitter:title" content="{{ title }}">
+  <meta property="twitter:description" content="{{ description }}">
+
+  {% if img != "" %}
+  <meta name="twitter:image" content="{{ img | absolute_url }}">
+  {% endif %}
+
+  {% include matomo.html %}
+
+  {% if page.comments and site.staticman.repository and site.staticman.branch %}
+  <link rel="stylesheet" href="{{ "/assets/css/staticman.css" | relative_url }}">
+  {% endif %}
+
+  {% if page.head-extra %}
+    {% for file in page.head-extra %}
+      {% include {{ file }} %}
+    {% endfor %}
+  {% endif %}
+
+
+<style>html,body {
+  overflow-x: hidden;
+}
+body, .bg {   
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1RTk1RjUxQTcyRDIxMUU5ODRDQUUwM0MwNjAxRDZDNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1RTk1RjUxQjcyRDIxMUU5ODRDQUUwM0MwNjAxRDZDNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjVFOTVGNTE4NzJEMjExRTk4NENBRTAzQzA2MDFENkM3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjVFOTVGNTE5NzJEMjExRTk4NENBRTAzQzA2MDFENkM3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+O+4qgAAAACBJREFUeNpi+PTp039sgIkBBxhQCRYg/vz5M6YEQIABAKSnGqutpCjwAAAAAElFTkSuQmCC);
+}
+header h1 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+}h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  }h3 {
+  font-size: 1.25rem;
+  margin: .5rem 0;
+  }
+  
+  .post-home h2 {
+    margin: 0;
+    font-size: 20px;
+}
+.post-thumb img {
+    object-fit: cover;
+    width: 100px !important;
+    height: 100px !important;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+div#tad-danhmuc h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+@media (max-width: 575.98px) { 
+body>.container {
+    padding: 0;
+}
+
+body>.container .card,body>.container div#tad-danhmuc {
+    border-radius: 0 !important;
+}
+
+ }
+
+  </style>
+
+
+<script type='text/javascript'>function loadCSS(c,b,f){var a=window.document.createElement("link");var d=b||window.document.getElementsByTagName("script")[0];a.rel="stylesheet";a.href=c;a.media="only x";d.parentNode.insertBefore(a,d);setTimeout(function(){a.media=f||"all"})}loadCSS("//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
+</script>
+<script src="../assets/js/jquery.js"></script>
+
+<script data-ad-client="ca-pub-1936887719551664" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<script type='application/ld+json'>{ "@context": "https://schema.org", "@type": "WebSite", "url": "https://webtool.vn/","sameAs" : [
+  "https://twitter.com/StarTuanIT",
+  "https://www.facebook.com/webtool.vn",
+  "https://www.instagram.com/taoanhdep/",
+  "https://www.linkedin.com/in/tu%E1%BA%A5n-tr%C6%B0%C6%A1ng-a71263170/"
+  ], "potentialAction": { "@type": "SearchAction", "target": "https://webtool.vn/tim-kiem/?query={search_term}", "query-input": "required name=search_term" } }</script>
+</head>

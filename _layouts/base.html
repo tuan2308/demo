@@ -1,0 +1,31 @@
+---
+common-css:
+  - "../assets/css/bootstrap-5.min.css"
+
+---
+
+
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'vi' }}">
+
+{% include head.html %}
+
+<body>
+
+  {% include gtm_body.html %}
+
+  {% include nav.html %}
+
+
+  {% include navdm.html %}
+
+  {% include ads0.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  {% include footer-scripts.html %}
+
+</body>
+</html>
